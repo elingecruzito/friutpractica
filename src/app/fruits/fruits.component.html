@@ -1,0 +1,36 @@
+<h2>Lista frutas</h2>
+
+<table class="table table-striped">
+    <thead class="table-dark">
+        <th>Id</th>
+        <th>Name</th>
+        <th>Family</th>
+        <th>Genus</th>
+        <th>Order</th>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let fruit of fruits">
+                <td>{{fruit.id}}</td>
+                <td>
+                    <button class="btn btn-success" (click)="alert(fruit)">
+                        {{fruit.name}}
+                    </button>
+                </td>
+                <td>
+                    <a routerLink="/family/{{fruit.family}}">
+                        {{fruit.family}}
+                    </a>
+                </td>
+                <td>
+                    <a routerLink="/genus/{{fruit.genus}}">
+                        {{fruit.genus}}
+                    </a>
+                </td>
+                <td>
+                    <a routerLink="/order/{{fruit.order}}">
+                        {{fruit.order}}
+                    </a>
+                </td>
+            </tr>
+    </tbody>
+</table>
